@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<!-- Project: myHobby.html [Mohammad Khan][812283]-->
+<head>
+	<style>
+	body {
+		background-color: AntiqueWhite;
+	}
+	.ref {
+		text-align: center;
+	}
+	h2 {
+		background-color: Indigo;
+		color: BlanchedAlmond;
+		text-align: center;
+		font-family: Copperplate, Papyrus, fantasy;
+	}
+	p { color: Blue;}
+	ol { font-family: 'Courier New', monospace;}
+	sec { color: black;
+		font-family: 'Courier New', monospace;
+	}
+	.hidden1 { display: none;}
+	.hidden2 { display: none;}
+	</style>
+	<script>
+	function guessNumber() {
+		var myHobby = 2;
+		var userInput = "";
+		var userInput = document.getElementById("number").value;
+		var x = document.getElementById("A");
+		var y = document.getElementById("Favourite");
+			if (isNaN(userInput) || userInput < 1 || userInput > 3 || userInput > 1 && userInput < 2 || userInput > 2 && userInput < 3)
+				{document.getElementById("displayMsg").innerHTML = "Invalid. You must write a number from the option (1, 2, or 3). " + String.fromCodePoint(0X1F611); x.classList.add("hidden1"); y.classList.add("hidden2");}
+			else {
+				if (userInput == 1)
+					{document.getElementById("displayMsg").innerHTML = "You guessed wrong. <sec>Reading</sec> is not my hobby. " + String.fromCodePoint(0X1F602); x.classList.add("hidden1"); y.classList.add("hidden2");}
+				else if (userInput == 3)
+					{document.getElementById("displayMsg").innerHTML = "You guessed wrong. <sec>Traveling</sec> is not my hobby. " + String.fromCodePoint(0X1F602); x.classList.add("hidden1"); y.classList.add("hidden2");}
+				else if (userInput == myHobby)
+					 {document.getElementById("displayMsg").innerHTML = "<b>Congratulations!</b> You guessed correct. <sec>Watching Anime</sec> is my hobby. " + String.fromCodePoint(0X1F604); x.classList.remove("hidden1"); y.classList.remove("hidden2");}			
+	        }
+	}
+	</script>
+	<title>My Hobby</title>
+</head>
+
+<body>
+	<div class="ref">
+        <a href="index.html">Home |</a>
+        <a href="aboutMe.html">About Me |</a>
+        <a href="myHobby.html">My Hobby. |</a>
+	</div>
+	<h2>Guess my Hobby</h2>
+	<div>
+		<input id="number" type="text">
+		<button id="myButton" type="button" onClick="guessNumber()">Check Result</button>
+		<p id="displayMsg">Choose the option (1, 2, or 3)</p>
+	</div>
+	<ol>
+		<li>Reading</li>
+		<li>Watching Anime</li>
+		<li>Traveling</li>		
+	</ol>
+	<p id="A" class="hidden1">My Favourite Anime is Demon Slayer.</p>
+	<div><img id="Favourite" class="hidden2" width="300" src="FavouriteAnime.jpg"/></div> 
+</body>
+</html>
+
